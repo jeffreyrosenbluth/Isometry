@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE0AC375215307C500B445A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AC374215307C500B445A6 /* AppDelegate.swift */; };
+		CE0AC377215307C500B445A6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE0AC376215307C500B445A6 /* GameScene.sks */; };
+		CE0AC379215307C500B445A6 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE0AC378215307C500B445A6 /* Actions.sks */; };
+		CE0AC37B215307C500B445A6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AC37A215307C500B445A6 /* GameScene.swift */; };
+		CE0AC37D215307C500B445A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AC37C215307C500B445A6 /* ViewController.swift */; };
+		CE0AC37F215307C600B445A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0AC37E215307C600B445A6 /* Assets.xcassets */; };
+		CE0AC382215307C600B445A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0AC380215307C600B445A6 /* Main.storyboard */; };
+		CE0AC38E215307C600B445A6 /* IsometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AC38D215307C600B445A6 /* IsometryTests.swift */; };
+		CE0AC399215307C600B445A6 /* IsometryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AC398215307C600B445A6 /* IsometryUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE0AC38A215307C600B445A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE0AC369215307C500B445A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE0AC370215307C500B445A6;
+			remoteInfo = Isometry;
+		};
+		CE0AC395215307C600B445A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE0AC369215307C500B445A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE0AC370215307C500B445A6;
+			remoteInfo = Isometry;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CE0AC371215307C500B445A6 /* Isometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Isometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0AC374215307C500B445A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE0AC376215307C500B445A6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		CE0AC378215307C500B445A6 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		CE0AC37A215307C500B445A6 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		CE0AC37C215307C500B445A6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE0AC37E215307C600B445A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE0AC381215307C600B445A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE0AC383215307C600B445A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE0AC384215307C600B445A6 /* Isometry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Isometry.entitlements; sourceTree = "<group>"; };
+		CE0AC389215307C600B445A6 /* IsometryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IsometryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0AC38D215307C600B445A6 /* IsometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsometryTests.swift; sourceTree = "<group>"; };
+		CE0AC38F215307C600B445A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE0AC394215307C600B445A6 /* IsometryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IsometryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0AC398215307C600B445A6 /* IsometryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsometryUITests.swift; sourceTree = "<group>"; };
+		CE0AC39A215307C600B445A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE0AC36E215307C500B445A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0AC386215307C600B445A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0AC391215307C600B445A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE0AC368215307C500B445A6 = {
+			isa = PBXGroup;
+			children = (
+				CE0AC373215307C500B445A6 /* Isometry */,
+				CE0AC38C215307C600B445A6 /* IsometryTests */,
+				CE0AC397215307C600B445A6 /* IsometryUITests */,
+				CE0AC372215307C500B445A6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE0AC372215307C500B445A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE0AC371215307C500B445A6 /* Isometry.app */,
+				CE0AC389215307C600B445A6 /* IsometryTests.xctest */,
+				CE0AC394215307C600B445A6 /* IsometryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE0AC373215307C500B445A6 /* Isometry */ = {
+			isa = PBXGroup;
+			children = (
+				CE0AC374215307C500B445A6 /* AppDelegate.swift */,
+				CE0AC376215307C500B445A6 /* GameScene.sks */,
+				CE0AC378215307C500B445A6 /* Actions.sks */,
+				CE0AC37A215307C500B445A6 /* GameScene.swift */,
+				CE0AC37C215307C500B445A6 /* ViewController.swift */,
+				CE0AC37E215307C600B445A6 /* Assets.xcassets */,
+				CE0AC380215307C600B445A6 /* Main.storyboard */,
+				CE0AC383215307C600B445A6 /* Info.plist */,
+				CE0AC384215307C600B445A6 /* Isometry.entitlements */,
+			);
+			path = Isometry;
+			sourceTree = "<group>";
+		};
+		CE0AC38C215307C600B445A6 /* IsometryTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE0AC38D215307C600B445A6 /* IsometryTests.swift */,
+				CE0AC38F215307C600B445A6 /* Info.plist */,
+			);
+			path = IsometryTests;
+			sourceTree = "<group>";
+		};
+		CE0AC397215307C600B445A6 /* IsometryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE0AC398215307C600B445A6 /* IsometryUITests.swift */,
+				CE0AC39A215307C600B445A6 /* Info.plist */,
+			);
+			path = IsometryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE0AC370215307C500B445A6 /* Isometry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE0AC39D215307C600B445A6 /* Build configuration list for PBXNativeTarget "Isometry" */;
+			buildPhases = (
+				CE0AC36D215307C500B445A6 /* Sources */,
+				CE0AC36E215307C500B445A6 /* Frameworks */,
+				CE0AC36F215307C500B445A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Isometry;
+			productName = Isometry;
+			productReference = CE0AC371215307C500B445A6 /* Isometry.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE0AC388215307C600B445A6 /* IsometryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE0AC3A0215307C600B445A6 /* Build configuration list for PBXNativeTarget "IsometryTests" */;
+			buildPhases = (
+				CE0AC385215307C600B445A6 /* Sources */,
+				CE0AC386215307C600B445A6 /* Frameworks */,
+				CE0AC387215307C600B445A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE0AC38B215307C600B445A6 /* PBXTargetDependency */,
+			);
+			name = IsometryTests;
+			productName = IsometryTests;
+			productReference = CE0AC389215307C600B445A6 /* IsometryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE0AC393215307C600B445A6 /* IsometryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE0AC3A3215307C600B445A6 /* Build configuration list for PBXNativeTarget "IsometryUITests" */;
+			buildPhases = (
+				CE0AC390215307C600B445A6 /* Sources */,
+				CE0AC391215307C600B445A6 /* Frameworks */,
+				CE0AC392215307C600B445A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE0AC396215307C600B445A6 /* PBXTargetDependency */,
+			);
+			name = IsometryUITests;
+			productName = IsometryUITests;
+			productReference = CE0AC394215307C600B445A6 /* IsometryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE0AC369215307C500B445A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Applause Code";
+				TargetAttributes = {
+					CE0AC370215307C500B445A6 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					CE0AC388215307C600B445A6 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = CE0AC370215307C500B445A6;
+					};
+					CE0AC393215307C600B445A6 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = CE0AC370215307C500B445A6;
+					};
+				};
+			};
+			buildConfigurationList = CE0AC36C215307C500B445A6 /* Build configuration list for PBXProject "Isometry" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE0AC368215307C500B445A6;
+			productRefGroup = CE0AC372215307C500B445A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE0AC370215307C500B445A6 /* Isometry */,
+				CE0AC388215307C600B445A6 /* IsometryTests */,
+				CE0AC393215307C600B445A6 /* IsometryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE0AC36F215307C500B445A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0AC377215307C500B445A6 /* GameScene.sks in Resources */,
+				CE0AC37F215307C600B445A6 /* Assets.xcassets in Resources */,
+				CE0AC379215307C500B445A6 /* Actions.sks in Resources */,
+				CE0AC382215307C600B445A6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0AC387215307C600B445A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0AC392215307C600B445A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE0AC36D215307C500B445A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0AC37D215307C500B445A6 /* ViewController.swift in Sources */,
+				CE0AC37B215307C500B445A6 /* GameScene.swift in Sources */,
+				CE0AC375215307C500B445A6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0AC385215307C600B445A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0AC38E215307C600B445A6 /* IsometryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE0AC390215307C600B445A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0AC399215307C600B445A6 /* IsometryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE0AC38B215307C600B445A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE0AC370215307C500B445A6 /* Isometry */;
+			targetProxy = CE0AC38A215307C600B445A6 /* PBXContainerItemProxy */;
+		};
+		CE0AC396215307C600B445A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE0AC370215307C500B445A6 /* Isometry */;
+			targetProxy = CE0AC395215307C600B445A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE0AC380215307C600B445A6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE0AC381215307C600B445A6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE0AC39B215307C600B445A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE0AC39C215307C600B445A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		CE0AC39E215307C600B445A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Isometry/Isometry.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Isometry/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.Isometry;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		CE0AC39F215307C600B445A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Isometry/Isometry.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Isometry/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.Isometry;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		CE0AC3A1215307C600B445A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = IsometryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.IsometryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Isometry.app/Contents/MacOS/Isometry";
+			};
+			name = Debug;
+		};
+		CE0AC3A2215307C600B445A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = IsometryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.IsometryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Isometry.app/Contents/MacOS/Isometry";
+			};
+			name = Release;
+		};
+		CE0AC3A4215307C600B445A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = IsometryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.IsometryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = Isometry;
+			};
+			name = Debug;
+		};
+		CE0AC3A5215307C600B445A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = IsometryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.IsometryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = Isometry;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE0AC36C215307C500B445A6 /* Build configuration list for PBXProject "Isometry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0AC39B215307C600B445A6 /* Debug */,
+				CE0AC39C215307C600B445A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE0AC39D215307C600B445A6 /* Build configuration list for PBXNativeTarget "Isometry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0AC39E215307C600B445A6 /* Debug */,
+				CE0AC39F215307C600B445A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE0AC3A0215307C600B445A6 /* Build configuration list for PBXNativeTarget "IsometryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0AC3A1215307C600B445A6 /* Debug */,
+				CE0AC3A2215307C600B445A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE0AC3A3215307C600B445A6 /* Build configuration list for PBXNativeTarget "IsometryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE0AC3A4215307C600B445A6 /* Debug */,
+				CE0AC3A5215307C600B445A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE0AC369215307C500B445A6 /* Project object */;
+}

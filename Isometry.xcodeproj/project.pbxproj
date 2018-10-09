@@ -201,13 +201,16 @@
 				TargetAttributes = {
 					CE0AC370215307C500B445A6 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					CE0AC388215307C600B445A6 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = CE0AC370215307C500B445A6;
 					};
 					CE0AC393215307C600B445A6 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = CE0AC370215307C500B445A6;
 					};
 				};
@@ -441,7 +444,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.Isometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -459,7 +462,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.Isometry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -478,7 +481,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.IsometryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Isometry.app/Contents/MacOS/Isometry";
 			};
 			name = Debug;
@@ -498,7 +501,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.IsometryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Isometry.app/Contents/MacOS/Isometry";
 			};
 			name = Release;
@@ -517,7 +520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.IsometryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = Isometry;
 			};
 			name = Debug;
@@ -536,7 +539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ApplauseCode.IsometryUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = Isometry;
 			};
 			name = Release;

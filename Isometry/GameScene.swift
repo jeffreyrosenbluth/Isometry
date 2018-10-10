@@ -13,9 +13,14 @@ struct Sprite {
     var sprite: SKSpriteNode
     var scale: CGFloat
     var angle: CGFloat
+    var position: CGPoint
     
     func run(_ act: SKAction) -> Void {
         sprite.run(act)
+    }
+    
+    func flip(duration: Double) -> SKAction {
+        return SKAction.scaleY(to: -1 * sprite.yScale, duration: duration)
     }
     
     // Rotate a sprite by theta keeping track of the cummulative rotation of the sprite.
@@ -26,10 +31,17 @@ struct Sprite {
         return SKAction.rotate(byAngle: theta, duration: duration)
     }
     
+    mutating func rotate(point: CGPoint, theta: CGFloat, duration: Double) -> SKAction {
+        angle = remainder(theta + angle, 2 * CGFloat.pi)
+        let p = CGPoint(x: position.x - point.x , y: position.y - point.y).applying(CGAffineTransform.init(rotationAngle: theta))
+        let r = rotate(theta: theta, duration: duration)
+        let t = translate(x: p.x + point.x - position.x, y: p.y + point.y - position.y, duration: duration)
+        return SKAction.group([r,t])
+    }
+    
     // Reflect a sprite about the line at angle theta with the x-axis.
     mutating func reflect(theta: CGFloat, duration: Double) -> SKAction {
-        let s = sprite.yScale
-        let ref = SKAction.scaleY(to: -1 * s, duration: duration)
+        let ref = flip(duration: duration)
         // Since the only reflection we can use is scaleY = -1 which reflects about
         // the transformed x-axis we calculate the rotation so that when it is composed
         // with the fixed reflectioj gives a new reflection about theta.
@@ -38,7 +50,11 @@ struct Sprite {
         return SKAction.group([ref, rot])
     }
     
-    
+    mutating func translate(x: CGFloat, y: CGFloat, duration: Double) -> SKAction {
+        position.x = position.x + x
+        position.y = position.y + y
+        return SKAction.moveBy(x: x, y: y, duration: duration)
+    }
 }
 
 
@@ -50,7 +66,7 @@ class GameScene: SKScene {
     private var a = CGFloat.pi / 4
     private let scale : CGFloat = 1
     
-    private var compass = Sprite(sprite: SKSpriteNode(), scale: 0.67, angle: 0)
+    private var compass = Sprite(sprite: SKSpriteNode(), scale: 0.67, angle: 0, position: CGPoint())
     
 
     override func didMove(to view: SKView) {
@@ -83,7 +99,7 @@ class GameScene: SKScene {
     
     override func mouseUp(with event: NSEvent) {
         let p = event.location(in: self)
-        compass.run(SKAction.move(to: p, duration: 1))
+        compass.run(compass.rotate(point: CGPoint(x: p.x, y: p.y), theta: a, duration: 1))
     }
     
     override func update(_ currentTime: TimeInterval) {

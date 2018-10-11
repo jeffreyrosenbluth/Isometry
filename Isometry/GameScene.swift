@@ -9,14 +9,37 @@
 import SpriteKit
 import GameplayKit
 
+func normalizeAngle(_ theta: CGFloat) -> CGFloat {
+    let psi = remainder(theta, 2 * CGFloat.pi)
+    return psi <= CGFloat.pi ? psi : psi - 2 * CGFloat.pi
+}
+
 struct Sprite {
-    var sprite: SKNode
+    var sprite: SKLabelNode
     var scale: CGFloat
     var angle: CGFloat
     var position: CGPoint
     
+    init(_ s : String) {
+        let l = SKLabelNode(fontNamed: "Semibold")
+        l.text = "F"
+        l.fontSize = 108
+        l.fontColor = SKColor.black
+        sprite = l
+        scale = 1
+        angle = 0
+        position = CGPoint(x: 0, y: 0)
+    }
+    
     func run(_ act: SKAction) -> Void {
+        if sprite.hasActions() { return }
         sprite.run(act)
+    }
+    
+    mutating func reset() {
+        angle = 0
+        position = CGPoint(x: 0, y: 0)
+        sprite.position = position
     }
     
     func flip(duration: Double) -> SKAction {
@@ -33,12 +56,12 @@ struct Sprite {
     mutating func rotate(theta: CGFloat, duration: Double) -> SKAction {
         // We must record the total amount of rotation since sprite kit will reflect
         // about the rotated x-axis when we scale y by -1.
-        angle = remainder(theta + angle, 2 * CGFloat.pi)
-        return SKAction.rotate(byAngle: theta, duration: duration)
+        angle = normalizeAngle(theta + angle)
+        return SKAction.rotate(byAngle: normalizeAngle(theta), duration: duration)
     }
     
     mutating func rotate(point: CGPoint, theta: CGFloat, duration: Double) -> SKAction {
-        angle = remainder(theta + angle, 2 * CGFloat.pi)
+        angle = normalizeAngle(theta + angle)
         let p = CGPoint(x: position.x - point.x , y: position.y - point.y).applying(CGAffineTransform.init(rotationAngle: theta))
         let r = rotate(theta: theta, duration: duration)
         let t = translate(x: p.x + point.x - position.x, y: p.y + point.y - position.y, duration: duration)
@@ -79,42 +102,54 @@ class GameScene: SKScene {
     private var a = CGFloat.pi / 4
     private let scale : CGFloat = 1
     
-    private var compass = Sprite(sprite: SKSpriteNode(), scale: 0.67, angle: 0, position: CGPoint())
+    private var compass = Sprite("F")
     
+    func stamp() {
+        if compass.sprite.hasActions() { return }
+        let s = compass.sprite.copy() as! SKLabelNode
+        s.fontColor = SKColor.gray
+        s.zPosition = -1
+        self.addChild(s)
+    }
 
     override func didMove(to view: SKView) {
-        self.broncoNode = SKSpriteNode(imageNamed: "Navigation")
-        guard let node = self.broncoNode else { return }
-        node.setScale(scale)
-        let font = NSFont.boldSystemFont(ofSize: 108)
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: font,
-            .foregroundColor: NSColor.black,
-            ]
-        let s = NSAttributedString(string: "F", attributes: attributes)
-//        compass.sprite = node
-        compass.sprite = SKLabelNode(attributedText: s)
         self.addChild(compass.sprite)
+        let dot = SKShapeNode(circleOfRadius: 3)
+        dot.fillColor = NSColor.red
+        dot.strokeColor = NSColor.red
+        compass.sprite.addChild(dot)
     }
     
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {
         // leftArrow
         case 0x7B:
+            stamp()
             compass.run(compass.rotate(theta: a, duration: 1))
-//            compass.run(rotate(node: &compass, theta: a, duration: 1))
         // rightArrow
         case 0x7C:
+            stamp()
             compass.run(compass.rotate(theta: -a, duration: 1))
         // downArrow
         case 0x7D:
+            stamp()
             compass.run(SKAction.scaleY(to: -1 * compass.sprite.yScale, duration: 1))
         // upArrow
         case 0x7E:
+            stamp()
             compass.run(compass.reflect(theta: a, duration: 1))
+        // space
         case 0x31:
-            compass.run(compass.glide(v: CGPoint(x: 100, y: 50), theta: CGFloat.pi / 3, duration: 1))
+            stamp()
+            compass.run(compass.glide(v: CGPoint(x: 100, y: 50), theta: CGFloat.pi, duration: 1))
         default:
+            self.removeAllChildren()
+            compass = Sprite("F")
+            self.addChild(compass.sprite)
+            let dot = SKShapeNode(circleOfRadius: 3)
+            dot.fillColor = NSColor.red
+            dot.strokeColor = NSColor.red
+            compass.sprite.addChild(dot)
             print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
         }
     }

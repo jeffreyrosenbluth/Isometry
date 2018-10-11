@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 
 struct Sprite {
-    var sprite: SKSpriteNode
+    var sprite: SKNode
     var scale: CGFloat
     var angle: CGFloat
     var position: CGPoint
@@ -21,6 +21,12 @@ struct Sprite {
     
     func flip(duration: Double) -> SKAction {
         return SKAction.scaleY(to: -1 * sprite.yScale, duration: duration)
+    }
+    
+    mutating func translate(x: CGFloat, y: CGFloat, duration: Double) -> SKAction {
+        position.x = position.x + x
+        position.y = position.y + y
+        return SKAction.moveBy(x: x, y: y, duration: duration)
     }
     
     // Rotate a sprite by theta keeping track of the cummulative rotation of the sprite.
@@ -36,7 +42,7 @@ struct Sprite {
         let p = CGPoint(x: position.x - point.x , y: position.y - point.y).applying(CGAffineTransform.init(rotationAngle: theta))
         let r = rotate(theta: theta, duration: duration)
         let t = translate(x: p.x + point.x - position.x, y: p.y + point.y - position.y, duration: duration)
-        return SKAction.group([r,t])
+        return SKAction.group([r, t])
     }
     
     // Reflect a sprite about the line at angle theta with the x-axis.
@@ -49,11 +55,18 @@ struct Sprite {
         let rot = rotate(theta: psi, duration: duration)
         return SKAction.group([ref, rot])
     }
+ 
+    mutating func reflect(mid: CGFloat, theta: CGFloat, duration: Double) -> SKAction {
+        let p = CGPoint(x: -2 * mid * sin(theta),y: 2 * mid * cos(theta))
+        let t = translate(x: p.x, y: p.y, duration: duration)
+        let r = reflect(theta: theta, duration: duration)
+        return SKAction.group([r, t])
+    }
     
-    mutating func translate(x: CGFloat, y: CGFloat, duration: Double) -> SKAction {
-        position.x = position.x + x
-        position.y = position.y + y
-        return SKAction.moveBy(x: x, y: y, duration: duration)
+    mutating func glide(v: CGPoint, theta: CGFloat, duration: Double) -> SKAction {
+        let t = translate(x: v.x, y: v.y, duration: duration)
+        let r = reflect(theta: theta, duration: duration)
+        return SKAction.group([r, t])
     }
 }
 
@@ -73,7 +86,8 @@ class GameScene: SKScene {
         self.broncoNode = SKSpriteNode(imageNamed: "Navigation")
         guard let node = self.broncoNode else { return }
         node.setScale(scale)
-        compass.sprite = node
+//        compass.sprite = node
+        compass.sprite = SKLabelNode(text: "F")
         self.addChild(compass.sprite)
     }
     
@@ -92,6 +106,8 @@ class GameScene: SKScene {
         // upArrow
         case 0x7E:
             compass.run(compass.reflect(theta: a, duration: 1))
+        case 0x31:
+            compass.run(compass.glide(v: CGPoint(x: 100, y: 50), theta: CGFloat.pi / 3, duration: 1))
         default:
             print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
         }

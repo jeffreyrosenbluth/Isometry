@@ -86,8 +86,14 @@ class GameScene: SKScene {
         self.broncoNode = SKSpriteNode(imageNamed: "Navigation")
         guard let node = self.broncoNode else { return }
         node.setScale(scale)
+        let font = NSFont.boldSystemFont(ofSize: 108)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: NSColor.black,
+            ]
+        let s = NSAttributedString(string: "F", attributes: attributes)
 //        compass.sprite = node
-        compass.sprite = SKLabelNode(text: "F")
+        compass.sprite = SKLabelNode(attributedText: s)
         self.addChild(compass.sprite)
     }
     

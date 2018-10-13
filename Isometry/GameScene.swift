@@ -155,6 +155,7 @@ class GameScene: SKScene {
     }
     
     override func mouseUp(with event: NSEvent) {
+        stamp()
         let p = event.location(in: self)
         compass.run(compass.rotate(point: CGPoint(x: p.x, y: p.y), theta: a, duration: 1))
     }

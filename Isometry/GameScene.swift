@@ -102,7 +102,7 @@ class GameScene: SKScene {
     private var a = CGFloat.pi / 4
     private let scale : CGFloat = 1
     
-    private var compass = Sprite("F")
+    var compass = Sprite("F")
     
     func stamp() {
         if compass.sprite.hasActions() { return }

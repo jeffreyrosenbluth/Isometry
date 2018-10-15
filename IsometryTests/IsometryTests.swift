@@ -24,6 +24,7 @@ class IsometryTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        print(tokenize("t(-30.5)r(90,(125,135))"))
     }
     
     func testPerformanceExample() {

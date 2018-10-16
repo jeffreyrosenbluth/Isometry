@@ -46,10 +46,10 @@ struct Sprite {
         return SKAction.scaleY(to: -1 * sprite.yScale, duration: duration)
     }
     
-    mutating func translate(x: CGFloat, y: CGFloat, duration: Double) -> SKAction {
-        position.x = position.x + x
-        position.y = position.y + y
-        return SKAction.moveBy(x: x, y: y, duration: duration)
+    mutating func translate(point: CGPoint, duration: Double) -> SKAction {
+        position.x = position.x + point.x
+        position.y = position.y + point.y
+        return SKAction.moveBy(x: point.x, y: point.y, duration: duration)
     }
     
     // Rotate a sprite by theta keeping track of the cummulative rotation of the sprite.
@@ -64,7 +64,8 @@ struct Sprite {
         angle = normalizeAngle(theta + angle)
         let p = CGPoint(x: position.x - point.x , y: position.y - point.y).applying(CGAffineTransform.init(rotationAngle: theta))
         let r = rotate(theta: theta, duration: duration)
-        let t = translate(x: p.x + point.x - position.x, y: p.y + point.y - position.y, duration: duration)
+        let q = CGPoint(x: p.x + point.x - position.x, y: p.y + point.y - position.y)
+        let t = translate(point: q, duration: duration)
         return SKAction.group([r, t])
     }
     
@@ -81,13 +82,13 @@ struct Sprite {
  
     mutating func reflect(mid: CGFloat, theta: CGFloat, duration: Double) -> SKAction {
         let p = CGPoint(x: -2 * mid * sin(theta),y: 2 * mid * cos(theta))
-        let t = translate(x: p.x, y: p.y, duration: duration)
+        let t = translate(point: CGPoint(x: p.x, y: p.y), duration: duration)
         let r = reflect(theta: theta, duration: duration)
         return SKAction.group([r, t])
     }
     
     mutating func glide(v: CGPoint, theta: CGFloat, duration: Double) -> SKAction {
-        let t = translate(x: v.x, y: v.y, duration: duration)
+        let t = translate(point: CGPoint(x: v.x, y: v.y), duration: duration)
         let r = reflect(theta: theta, duration: duration)
         return SKAction.group([r, t])
     }
@@ -125,19 +126,19 @@ class GameScene: SKScene {
         // leftArrow
         case 0x7B:
             stamp()
-            compass.run(compass.rotate(theta: a, duration: 1))
+            compass.run(compass.rotate(point: CGPoint.zero, theta: a, duration: 1))
         // rightArrow
         case 0x7C:
             stamp()
-            compass.run(compass.rotate(theta: -a, duration: 1))
+            compass.run(compass.rotate(point: CGPoint.zero, theta: -a, duration: 1))
         // downArrow
         case 0x7D:
             stamp()
-            compass.run(SKAction.scaleY(to: -1 * compass.sprite.yScale, duration: 1))
+            compass.run(compass.reflect(theta: -a, duration: 1))
         // upArrow
         case 0x7E:
             stamp()
-            compass.run(compass.reflect(theta: a, duration: 1))
+            compass.run(compass.reflect(mid: 0, theta: a, duration: 1))
         // space
         case 0x31:
             stamp()

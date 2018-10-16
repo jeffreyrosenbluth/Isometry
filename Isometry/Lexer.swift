@@ -16,7 +16,7 @@ enum Token {
     case leftParen
     case rightParen
     case comma
-    case number(Double)
+    case number(CGFloat)
 }
 
 func tokenize(_ str: String) -> Array<Token> {
@@ -26,7 +26,7 @@ func tokenize(_ str: String) -> Array<Token> {
     func digits(ds: Array<Character>) {
         if ds == [] { return }
         if let x = Double(String(ds)) {
-            result.append(.number(x))
+            result.append(.number(CGFloat(x)))
         }
         buffer = []
     }

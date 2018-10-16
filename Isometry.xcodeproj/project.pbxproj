@@ -17,6 +17,7 @@
 		CE0AC382215307C600B445A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0AC380215307C600B445A6 /* Main.storyboard */; };
 		CE0AC38E215307C600B445A6 /* IsometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AC38D215307C600B445A6 /* IsometryTests.swift */; };
 		CE0AC399215307C600B445A6 /* IsometryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AC398215307C600B445A6 /* IsometryUITests.swift */; };
+		CECA9FD92174DFE1005BC98F /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA9FD82174DFE1005BC98F /* Parser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		CE0AC394215307C600B445A6 /* IsometryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IsometryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0AC398215307C600B445A6 /* IsometryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsometryUITests.swift; sourceTree = "<group>"; };
 		CE0AC39A215307C600B445A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECA9FD82174DFE1005BC98F /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				CE0AC37A215307C500B445A6 /* GameScene.swift */,
 				CE0AC37C215307C500B445A6 /* ViewController.swift */,
 				CE082ED121725A3400B6B186 /* Lexer.swift */,
+				CECA9FD82174DFE1005BC98F /* Parser.swift */,
 				CE0AC37E215307C600B445A6 /* Assets.xcassets */,
 				CE0AC380215307C600B445A6 /* Main.storyboard */,
 				CE0AC383215307C600B445A6 /* Info.plist */,
@@ -273,6 +276,7 @@
 			files = (
 				CE0AC37D215307C500B445A6 /* ViewController.swift in Sources */,
 				CE0AC37B215307C500B445A6 /* GameScene.swift in Sources */,
+				CECA9FD92174DFE1005BC98F /* Parser.swift in Sources */,
 				CE082ED221725A3400B6B186 /* Lexer.swift in Sources */,
 				CE0AC375215307C500B445A6 /* AppDelegate.swift in Sources */,
 			);

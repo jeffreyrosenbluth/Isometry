@@ -46,6 +46,12 @@ struct Sprite {
         return SKAction.scaleY(to: -1 * sprite.yScale, duration: duration)
     }
     
+    mutating func move(point: CGPoint, duration: Double) -> SKAction {
+        position.x = point.x
+        position.y = point.y
+        return SKAction.move(to: point, duration: duration)
+    }
+    
     mutating func translate(point: CGPoint, duration: Double) -> SKAction {
         position.x = position.x + point.x
         position.y = position.y + point.y
@@ -61,11 +67,10 @@ struct Sprite {
     }
     
     mutating func rotate(point: CGPoint, theta: CGFloat, duration: Double) -> SKAction {
-        angle = normalizeAngle(theta + angle)
         let p = CGPoint(x: position.x - point.x , y: position.y - point.y).applying(CGAffineTransform.init(rotationAngle: theta))
         let r = rotate(theta: theta, duration: duration)
-        let q = CGPoint(x: p.x + point.x - position.x, y: p.y + point.y - position.y)
-        let t = translate(point: q, duration: duration)
+        let q = CGPoint(x: p.x + point.x, y: p.y + point.y)
+        let t = move(point: q, duration: duration)
         return SKAction.group([r, t])
     }
     
@@ -76,7 +81,7 @@ struct Sprite {
         // the transformed x-axis we calculate the rotation so that when it is composed
         // with the fixed reflectioj gives a new reflection about theta.
         let psi = 2 * (theta - angle)
-        let rot = rotate(theta: psi, duration: duration)
+        let rot = rotate(point: CGPoint.zero, theta: psi, duration: duration)
         return SKAction.group([ref, rot])
     }
  
@@ -138,7 +143,7 @@ class GameScene: SKScene {
         // upArrow
         case 0x7E:
             stamp()
-            compass.run(compass.reflect(mid: 0, theta: a, duration: 1))
+            compass.run(compass.reflect(theta: a, duration: 1))
         // space
         case 0x31:
             stamp()
@@ -158,7 +163,7 @@ class GameScene: SKScene {
     override func mouseUp(with event: NSEvent) {
         stamp()
         let p = event.location(in: self)
-        compass.run(compass.rotate(point: CGPoint(x: p.x, y: p.y), theta: a, duration: 1))
+        compass.run(compass.move(point: p, duration: 1))
     }
     
     override func update(_ currentTime: TimeInterval) {

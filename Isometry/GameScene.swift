@@ -128,27 +128,36 @@ class GameScene: SKScene {
     
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {
-        // leftArrow
-        case 0x7B:
+        case 0x0F:
             stamp()
-            compass.run(compass.rotate(point: CGPoint.zero, theta: a, duration: 1))
-        // rightArrow
-        case 0x7C:
+            let sceneViewController = self.view?.window?.contentViewController as! ViewController
+            let x = CGFloat(sceneViewController.rotateX.doubleValue)
+            let y = CGFloat(sceneViewController.rotateY.doubleValue)
+            let a = CGFloat(sceneViewController.rotateTheta.doubleValue) * CGFloat.pi * 2 / 360
+            compass.run(compass.rotate(point: CGPoint(x: x, y: y), theta: a, duration: 1))
+        // t
+        case 0x11:
             stamp()
-            compass.run(compass.rotate(point: CGPoint.zero, theta: -a, duration: 1))
-        // downArrow
-        case 0x7D:
+            let sceneViewController = self.view?.window?.contentViewController as! ViewController
+            let x = CGFloat(sceneViewController.translateX.doubleValue)
+            let y = CGFloat(sceneViewController.translateY.doubleValue)
+            compass.run(compass.translate(point: CGPoint(x: x, y: y), duration: 1))
+        // f
+        case 0x03:
             stamp()
-            compass.run(compass.reflect(theta: -a, duration: 1))
-        // upArrow
-        case 0x7E:
+            let sceneViewController = self.view?.window?.contentViewController as! ViewController
+            let m = CGFloat(sceneViewController.reflectMid.doubleValue)
+            let a = CGFloat(sceneViewController.reflectTheta.doubleValue) * CGFloat.pi * 2 / 360
+            compass.run(compass.reflect(mid: m, theta: a, duration: 1))
+        // g
+        case 0x05:
             stamp()
-            compass.run(compass.reflect(theta: a, duration: 1))
-        // space
-        case 0x31:
-            stamp()
-            compass.run(compass.glide(v: CGPoint(x: 100, y: 50), theta: CGFloat.pi, duration: 1))
-        default:
+            let sceneViewController = self.view?.window?.contentViewController as! ViewController
+            let x = CGFloat(sceneViewController.glideX.doubleValue)
+            let y = CGFloat(sceneViewController.glideY.doubleValue)
+            let a = CGFloat(sceneViewController.glideTheta.doubleValue) * CGFloat.pi * 2 / 360
+            compass.run(compass.glide(v: CGPoint(x: x, y: y), theta: a, duration: 1))
+        case 0x28:
             self.removeAllChildren()
             compass = Sprite("F")
             self.addChild(compass.sprite)
@@ -156,16 +165,11 @@ class GameScene: SKScene {
             dot.fillColor = NSColor.red
             dot.strokeColor = NSColor.red
             compass.sprite.addChild(dot)
-            print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
+        default:
+            break
         }
     }
-    
-    override func mouseUp(with event: NSEvent) {
-        stamp()
-        let p = event.location(in: self)
-        compass.run(compass.move(point: p, duration: 1))
-    }
-    
+        
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }

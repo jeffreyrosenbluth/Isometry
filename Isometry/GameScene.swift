@@ -23,7 +23,7 @@ struct Sprite {
     init(_ s : String) {
         let l = SKLabelNode(fontNamed: "Semibold")
         l.text = "F"
-        l.fontSize = 108
+        l.fontSize = 96
         l.fontColor = SKColor.black
         sprite = l
         scale = 1
@@ -105,7 +105,6 @@ class GameScene: SKScene {
     private var label : SKLabelNode?
     private var broncoNode : SKSpriteNode?
     private var node : SKSpriteNode?
-    private var a = CGFloat.pi / 4
     private let scale : CGFloat = 1
     
     var compass = Sprite("F")
@@ -120,9 +119,9 @@ class GameScene: SKScene {
 
     override func didMove(to view: SKView) {
         self.addChild(compass.sprite)
-        let dot = SKShapeNode(circleOfRadius: 3)
-        dot.fillColor = NSColor.red
-        dot.strokeColor = NSColor.red
+        let dot = SKShapeNode(circleOfRadius: 2)
+        dot.fillColor = NSColor.orange
+        dot.strokeColor = NSColor.orange
         compass.sprite.addChild(dot)
     }
     

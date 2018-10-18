@@ -30,7 +30,7 @@ class ViewController: NSViewController {
     @IBAction func go(_ sender: NSButton) {
         var s = scene.compass
         scene.stamp()
-        s.run(s.rotate(theta: CGFloat.pi / 2, duration: 1))
+        s.run(s.rotate(point: CGPoint.zero, theta: CGFloat.pi / 2, duration: 1))
     }
     
     override func viewDidLoad() {

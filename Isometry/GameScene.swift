@@ -57,18 +57,13 @@ struct Sprite {
         position.y = position.y + point.y
         return SKAction.moveBy(x: point.x, y: point.y, duration: duration)
     }
-    
     // Rotate a sprite by theta keeping track of the cummulative rotation of the sprite.
-    mutating func rotate(theta: CGFloat, duration: Double) -> SKAction {
+    mutating func rotate(point: CGPoint, theta: CGFloat, duration: Double) -> SKAction {
         // We must record the total amount of rotation since sprite kit will reflect
         // about the rotated x-axis when we scale y by -1.
         angle = normalizeAngle(theta + angle)
-        return SKAction.rotate(byAngle: normalizeAngle(theta), duration: duration)
-    }
-    
-    mutating func rotate(point: CGPoint, theta: CGFloat, duration: Double) -> SKAction {
         let p = CGPoint(x: position.x - point.x , y: position.y - point.y).applying(CGAffineTransform.init(rotationAngle: theta))
-        let r = rotate(theta: theta, duration: duration)
+        let r = SKAction.rotate(byAngle: normalizeAngle(theta), duration: duration)
         let q = CGPoint(x: p.x + point.x, y: p.y + point.y)
         let t = move(point: q, duration: duration)
         return SKAction.group([r, t])
@@ -79,16 +74,16 @@ struct Sprite {
         let ref = flip(duration: duration)
         // Since the only reflection we can use is scaleY = -1 which reflects about
         // the transformed x-axis we calculate the rotation so that when it is composed
-        // with the fixed reflectioj gives a new reflection about theta.
+        // with the fixed reflection gives a new reflection about theta.
         let psi = 2 * (theta - angle)
         let rot = rotate(point: CGPoint.zero, theta: psi, duration: duration)
         return SKAction.group([ref, rot])
     }
  
     mutating func reflect(mid: CGFloat, theta: CGFloat, duration: Double) -> SKAction {
-        let p = CGPoint(x: -2 * mid * sin(theta),y: 2 * mid * cos(theta))
-        let t = translate(point: CGPoint(x: p.x, y: p.y), duration: duration)
+        let p = CGPoint(x: -2 * mid * sin(theta), y: 2 * mid * cos(theta))
         let r = reflect(theta: theta, duration: duration)
+        let t = translate(point: p, duration: duration)
         return SKAction.group([r, t])
     }
     
@@ -127,6 +122,7 @@ class GameScene: SKScene {
     
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {
+        // r
         case 0x0F:
             stamp()
             let sceneViewController = self.view?.window?.contentViewController as! ViewController
@@ -156,6 +152,7 @@ class GameScene: SKScene {
             let y = CGFloat(sceneViewController.glideY.doubleValue)
             let a = CGFloat(sceneViewController.glideTheta.doubleValue) * CGFloat.pi * 2 / 360
             compass.run(compass.glide(v: CGPoint(x: x, y: y), theta: a, duration: 1))
+        // Command-K
         case 0x28:
             self.removeAllChildren()
             compass = Sprite("F")

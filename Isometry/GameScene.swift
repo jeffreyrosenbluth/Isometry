@@ -71,13 +71,17 @@ struct Sprite {
     
     // Reflect a sprite about the line at angle theta with the x-axis.
     mutating func reflect(theta: CGFloat, duration: Double) -> SKAction {
+        let c = cos(2 * theta)
+        let s = sin(2 * theta)
+        let p = CGPoint(x: position.x , y: position.y).applying(CGAffineTransform.init(a: c , b: s, c: s, d: -c, tx: 0, ty: 0))
         let ref = flip(duration: duration)
         // Since the only reflection we can use is scaleY = -1 which reflects about
         // the transformed x-axis we calculate the rotation so that when it is composed
         // with the fixed reflection gives a new reflection about theta.
         let psi = 2 * (theta - angle)
         let rot = rotate(point: CGPoint.zero, theta: psi, duration: duration)
-        return SKAction.group([ref, rot])
+        let t = move(point: p, duration: duration)
+        return SKAction.group([ref, rot, t])
     }
  
     mutating func reflect(mid: CGFloat, theta: CGFloat, duration: Double) -> SKAction {

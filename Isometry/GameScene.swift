@@ -86,8 +86,8 @@ struct Sprite {
  
     mutating func reflect(mid: CGFloat, theta: CGFloat, duration: Double) -> SKAction {
         let p = CGPoint(x: -2 * mid * sin(theta), y: 2 * mid * cos(theta))
-        let r = reflect(theta: theta, duration: duration)
         let t = translate(point: p, duration: duration)
+        let r = reflect(theta: theta, duration: duration)
         return SKAction.group([r, t])
     }
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE082ED221725A3400B6B186 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE082ED121725A3400B6B186 /* Lexer.swift */; };
+		CE082ED4217CFAE300B6B186 /* Isometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE082ED3217CFAE300B6B186 /* Isometry.swift */; };
 		CE0AC375215307C500B445A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0AC374215307C500B445A6 /* AppDelegate.swift */; };
 		CE0AC377215307C500B445A6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE0AC376215307C500B445A6 /* GameScene.sks */; };
 		CE0AC379215307C500B445A6 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = CE0AC378215307C500B445A6 /* Actions.sks */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		CE082ED121725A3400B6B186 /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
+		CE082ED3217CFAE300B6B186 /* Isometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Isometry.swift; sourceTree = "<group>"; };
 		CE0AC371215307C500B445A6 /* Isometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Isometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0AC374215307C500B445A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE0AC376215307C500B445A6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				CE0AC376215307C500B445A6 /* GameScene.sks */,
 				CE0AC378215307C500B445A6 /* Actions.sks */,
 				CE0AC37A215307C500B445A6 /* GameScene.swift */,
+				CE082ED3217CFAE300B6B186 /* Isometry.swift */,
 				CE0AC37C215307C500B445A6 /* ViewController.swift */,
 				CE082ED121725A3400B6B186 /* Lexer.swift */,
 				CECA9FD82174DFE1005BC98F /* Parser.swift */,
@@ -279,6 +282,7 @@
 				CECA9FD92174DFE1005BC98F /* Parser.swift in Sources */,
 				CE082ED221725A3400B6B186 /* Lexer.swift in Sources */,
 				CE0AC375215307C500B445A6 /* AppDelegate.swift in Sources */,
+				CE082ED4217CFAE300B6B186 /* Isometry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

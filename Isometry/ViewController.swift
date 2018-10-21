@@ -36,16 +36,16 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        translateX.doubleValue = 50
-        translateY.doubleValue = 50
+        translateX.doubleValue = -50
+        translateY.doubleValue = 40
         rotateX.doubleValue = 0
         rotateY.doubleValue = 0
-        rotateTheta.doubleValue = 45
+        rotateTheta.doubleValue = 60
         reflectMid.doubleValue = 0
         reflectTheta.doubleValue = 45
-        glideX.doubleValue = 100
-        glideY.doubleValue = 50
-        glideTheta.doubleValue = 180
+        glideX.doubleValue = 25
+        glideY.doubleValue = 15
+        glideTheta.doubleValue = 75
         
         if let view = self.skView {
             // Load the SKScene from 'GameScene.sks'

@@ -22,7 +22,7 @@ struct Sprite {
     
     init(_ s : String) {
         let l = SKLabelNode(fontNamed: "Semibold")
-        l.text = "F"
+        l.text = s
         l.fontSize = 96
         l.fontColor = SKColor.black
         sprite = l
@@ -57,6 +57,11 @@ struct Sprite {
         position.y = position.y + point.y
         return SKAction.moveBy(x: point.x, y: point.y, duration: duration)
     }
+    
+    mutating func doTranslate(point: CGPoint, duration: Double) {
+        run(translate(point: point, duration: duration))
+    }
+    
     // Rotate a sprite by theta keeping track of the cummulative rotation of the sprite.
     mutating func rotate(point: CGPoint, theta: CGFloat, duration: Double) -> SKAction {
         // We must record the total amount of rotation since sprite kit will reflect
@@ -67,6 +72,10 @@ struct Sprite {
         let q = CGPoint(x: p.x + point.x, y: p.y + point.y)
         let t = move(point: q, duration: duration)
         return SKAction.group([r, t])
+    }
+    
+    mutating func doRotate(point: CGPoint, theta: CGFloat, duration: Double) {
+        run(rotate(point: point, theta: theta, duration: duration))
     }
     
     // Reflect a sprite about the line at angle theta with the x-axis.
@@ -91,10 +100,18 @@ struct Sprite {
         return SKAction.group([r, t])
     }
     
+    mutating func doReflect(mid: CGFloat, theta: CGFloat, duration: Double) {
+        run(reflect(mid: mid, theta: theta, duration: duration))
+    }
+    
     mutating func glide(v: CGPoint, theta: CGFloat, duration: Double) -> SKAction {
         let t = translate(point: CGPoint(x: v.x, y: v.y), duration: duration)
         let r = reflect(theta: theta, duration: duration)
         return SKAction.group([r, t])
+    }
+    
+    mutating func doGlide(v: CGPoint, theta: CGFloat, duration: Double) {
+        run(glide(v: v, theta: theta, duration: duration))
     }
 }
 
